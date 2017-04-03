@@ -1,0 +1,146 @@
+/* ----------------------------------------- */
+/* 明るさ */
+.brightness .item {
+    animation: bright-loop 1.0s infinite;
+}
+
+@keyframes bright-loop {
+    0% {
+        filter: brightness(1.0);
+    }
+    25% {
+        filter: brightness(2.0);
+    }
+    75% {
+        filter: brightness(0.0);
+    }
+    100% {
+        filter: brightness(1.0);
+    }
+}
+
+/* ----------------------------------------- */
+/* ぼかし */
+.blur .item {
+    animation: blur-loop 1.0s infinite;
+}
+
+@keyframes blur-loop {
+    0% {
+        filter: blur(0%);
+    }
+    50% {
+        filter: blur(32px);
+    }
+    100% {
+        filter: blur(0%);
+    }
+}
+
+/* ----------------------------------------- */
+/* グレースケール */
+.grayscale .item {
+    animation: grayscale-loop 1.0s infinite;
+}
+
+@keyframes grayscale-loop {
+    0% {
+        filter: grayscale(0%);
+    }
+    50% {
+        filter: grayscale(100%);
+    }
+    100% {
+        filter: grayscale(0%);
+    }
+}
+
+/* ----------------------------------------- */
+/* コントラスト */
+.contrast .item {
+    animation: contrast-loop 1.0s infinite;
+}
+
+@keyframes contrast-loop {
+    0% {
+        filter: contrast(100%);
+    }
+    25% {
+        filter: contrast(200%);
+    }
+    75% {
+        filter: contrast(0%);
+    }
+    100% {
+        filter: contrast(100%);
+    }
+}
+
+/* ----------------------------------------- */
+/* 不透明度 */
+.opacity .item {
+    animation: opacity-loop 1.0s infinite;
+}
+
+@keyframes opacity-loop {
+    0% {
+        filter: opacity(100%);
+    }
+    50% {
+        filter: opacity(0%);
+    }
+    100% {
+        filter: opacity(100%);
+    }
+}
+
+/* ----------------------------------------- */
+/* ドロップシャドウ */
+.drop-shadow .item {
+    animation: drop-shadow-loop 1.0s infinite;
+}
+
+@keyframes drop-shadow-loop {
+    0% {
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 1.0));
+    }
+    50% {
+        filter: drop-shadow(5px 5px 20px rgba(0, 0, 0, 1.0));
+    }
+    100% {
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 1.0));
+    }
+}
+
+/* ----------------------------------------- */
+/* 色相 */
+.hue-rotate .item {
+    animation: hue-rotate-loop 1.0s infinite;
+}
+
+@keyframes hue-rotate-loop {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* ----------------------------------------- */
+/* 複合効果 */
+.complex .item {
+    animation: complex-loop 1.0s infinite;
+}
+
+@keyframes complex-loop {
+    0% {
+        filter: blur(0%) brightness(1.0) contrast(100%);
+    }
+    50% {
+        filter: blur(32px) brightness(3.0) contrast(200%);
+    }
+    100% {
+        filter: blur(0%) brightness(1.0) contrast(100%);
+    }
+}

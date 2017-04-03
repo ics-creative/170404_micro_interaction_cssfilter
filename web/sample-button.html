@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>CSS Filter Sample - ICS</title>
+
+  <style>
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #eee;
+    }
+
+    .wrap {
+      height: 100%;
+      display: flex;
+      margin: 0 100px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .btn {
+      /* 通常時の明るさ(デフォルト値) */
+      filter: brightness(1.0);
+      transition: filter 0.3s;
+    }
+
+    .btn:hover {
+      /* マウスオーバー時に明るくする */
+      filter: brightness(1.15);
+    }
+
+    .btn:active {
+      /* マウスダウン時に暗くする */
+      filter: brightness(0.85);
+    }
+
+  </style>
+
+</head>
+<body>
+<div class="wrap">
+  <a href="#">
+    <img srcset="imgs/btn-blue.png 290w" sizes="145px" class="btn"/>
+  </a>
+  <a href="#">
+    <img srcset="imgs/btn-green.png 290w" sizes="145px" class="btn"/>
+  </a>
+  <a href="#">
+    <img srcset="imgs/btn-red.png 290w" sizes="145px" class="btn"/>
+  </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>CSS Filter Sample - ICS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="base.css"/>
+  <link rel="stylesheet" href="effect.css"/>
+  <script defer src="https://rawgit.com/mrdoob/stats.js/master/build/stats.min.js"></script>
+  <script defer src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+<div id="app">
+
+  <nav class="navbar navbar-toggleable-xl navbar-inverse bg-inverse">
+
+    <a class="navbar-brand navbar-title hidden-sm-down" href="#">CSS Filter Sample</a>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <form class="form-inline">
+
+        <label class="mr-sm-2" style="color: white;">Filter</label>
+        <select class="form-control mr-sm-2"
+                v-model="effectClass">
+          <option>brightness</option>
+          <option>blur</option>
+          <option>grayscale</option>
+          <option>opacity</option>
+          <option>drop-shadow</option>
+          <option>hue-rotate</option>
+          <option>complex</option>
+        </select>
+
+        <label class="mr-sm-2" style="color: white;">Elements</label>
+
+        <input type="number"
+               class="form-control "
+               v-model="itemLength"
+               min="10"
+               max="10000"
+               step="10"/>
+      </form>
+    </div>
+  </nav>
+
+
+  <div class="album">
+    <div class="container">
+      <div class="items" :class="effectClass">
+        <my-item v-for="item in items" :item="item" :key="item.key"></my-item>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+      <p>Photo from <a href="https://www.flickr.com/photos/clockmaker-jp/" target="_blank">@clockmaker</a>.</p>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
