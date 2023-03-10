@@ -10,7 +10,7 @@ body {
 }
 
 .album {
-  padding-top: 50px;
+  padding-top: 16px;
 }
 
 .items {
@@ -18,9 +18,9 @@ body {
   /* 最小100px、最大1frの列を繰り返しつくる */
   grid-template-columns: repeat(
     auto-fill,
-    minmax(240px, 1fr)
+    minmax(196px, 1fr)
   );
-  gap: 24px;
+  gap: 16px;
 }
 
 .item img {
@@ -36,7 +36,6 @@ body {
 
 .card-text {
   font-size: 85%;
-  text-align: justify;
   color: #666;
 
   display: -webkit-box;
