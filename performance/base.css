@@ -18,33 +18,13 @@ body {
 }
 
 .items {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 575px) {
-  .item {
-    width: calc(50% - 10px);
-    margin-right: 20px;
-    margin-bottom: 20px;
-    border: 0;
-  }
-
-  .item:nth-child(2n) {
-    margin-right: 0;
-  }
-}
-
-@media (min-width: 576px) {
-  .item {
-    width: calc((100% - 20px * 2) / 3 - 1px); /* IE対策のため変な計算になってる… */
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-
-  .item:nth-child(3n) {
-    margin-right: 0;
-  }
+  display: grid;
+  /* 最小100px、最大1frの列を繰り返しつくる */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(200px, 1fr)
+  );
+  gap: 24px;
 }
 
 .item img {

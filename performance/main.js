@@ -1,4 +1,5 @@
 'use strict';
+import {createApp} from "https://unpkg.com/vue@3.2.4/dist/vue.esm-browser.prod.js";
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -17,7 +18,30 @@ window.addEventListener('DOMContentLoaded', () => {
   // Vue.jsの初期化
   // -----------------------------------
 
-  Vue.component('MyItem', {
+  const app = createApp({
+    data() {
+      return {
+        itemLength: 20,
+        effectClass: "brightness"
+      }
+    },
+    computed: {
+      items() {
+        const len = Number(this.itemLength);
+        const list = [];
+        for (let i = 0; i < len; i++) {
+          list.push({
+            key: i,
+            thumbUrl: `imgs/photo-${i % 10}.jpg`,
+            delay: `${(i % 20) * 50}ms`
+          });
+        }
+        return list;
+      },
+    }
+  });
+
+  app.component('my-item', {
     template: `
         <div class="item" v-bind:style="{'animationDelay': item.delay}">
           <a href="#"><img v-bind:src="item.thumbUrl"/></a>
@@ -27,25 +51,6 @@ window.addEventListener('DOMContentLoaded', () => {
     props: ['item']
   });
 
-  new Vue({
-    el: '#app',
-    data: {
-      itemLength: 20,
-      effectClass : "brightness"
-    },
-    computed: {
-      items: function () {
-        const len = Number(this.itemLength);
-        const list = [];
-        for (let i = 0; i < len; i++) {
-          list.push({
-            key : i,
-            thumbUrl : `imgs/photo-${i % 10}.jpg`,
-            delay: `${(i % 20) * 50}ms`
-          });
-        }
-        return list;
-      },
-    }
-  });
+  app.mount("#app")
+
 });
